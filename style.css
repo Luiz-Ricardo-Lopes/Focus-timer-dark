@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --button-color: hsl(240, 9%, 89%);
+  --bg-color: white;
+  --button-select: hsl(194, 97%, 31%);
+  --dark-mode: hsl(240, 5%, 7%);
+  --timer-color: hsl(240, 6%, 21%);
+}
+.dark-theme {
+  --button-color: hsl(240, 1%, 13%);
+  --bg-color: rgb(0, 0, 0);
+  --button-select: hsl(190, 6%, 21%);
+  --dark-mode: hsl(0, 0%, 100%);
+
+  --timer-color: hsl(0, 0%, 100%);
+}
+
+.toggle-theme {
+  --button-color: hsl(240, 1%, 13%);
+  --bg-color: rgb(0, 0, 0);
+  --button-select: hsl(190, 6%, 21%);
+  --dark-mode: hsl(0, 0%, 100%);
+  --timer-color: hsl(0, 0%, 100%);
+}
+
+body {
+  background: var(--bg-color);
+  font-family: 'Roboto', sans-serif;
+
+  display: grid;
+  min-height: 100vh;
+  align-items: center;
+}
+
+nav {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+}
+
+#icon {
+  background-color: transparent;
+}
+
+main {
+  width: 82.1rem;
+  height: 33.6rem;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#timer {
+  display: flex;
+  max-width: 32.1rem;
+
+  height: 14.8rem;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12.6rem;
+  line-height: 14.8rem;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  color: var(--timer-color);
+}
+
+#controls {
+  display: flex;
+  gap: 4rem;
+
+  width: 31.2rem;
+  height: 4.8rem;
+}
+
+#controls button {
+  width: 4.8rem;
+  height: 4.8rem;
+
+  border: none;
+  background-color: var(--bg-color);
+
+  cursor: pointer;
+}
+
+#sounds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  max-width: 30.8rem;
+  height: 33.6rem;
+  gap: 3.2rem;
+}
+
+button {
+  width: 13.8rem;
+  height: 15.2rem;
+
+  background: #e1e1e6;
+  border-radius: 2.4rem;
+  border: none;
+  cursor: pointer;
+}
+.card path {
+  fill: var(--dark-mode);
+}
+
+.play svg path,
+.stop svg path,
+.add svg path,
+.decrease svg path {
+  fill: var(--timer-color);
+}
+
+.forest svg path:nth-child(1),
+.rain svg path:nth-child(1),
+.coffe-shop svg path:nth-child(1),
+.fireplace svg path:nth-child(1) {
+  fill: var(--button-color);
+  filter: brightness(1);
+}
+
+.hide {
+  display: none;
+}
+
+.card {
+  position: relative;
+  border-radius: 2.4rem;
+  background-color: var(--bg-cards);
+  transition: all 400ms;
+}
+
+.vol {
+  position: absolute;
+  bottom: 2.4rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.vol {
+  -webkit-appearance: none;
+  cursor: pointer;
+  width: 9rem;
+  border-radius: 5rem;
+}
+
+.vol::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 1.6rem;
+  width: 1.6rem;
+  border-radius: 5rem;
+  background: var(--dark-mode);
+  margin-top: -5px;
+}
+
+.vol::-webkit-slider-runnable-track {
+  height: 0.5rem;
+  background: var(--dark-mode);
+  border-radius: 5rem;
+}
+.select {
+  position: relative;
+  background-color: var(--button-select);
+  border-radius: 2.4rem;
+  transition: all 400ms;
+}
+
+.select svg path {
+  fill: var(--button-select);
+}
+
+.select svg path:nth-child(2) {
+  fill: var(--bg-color);
+}
